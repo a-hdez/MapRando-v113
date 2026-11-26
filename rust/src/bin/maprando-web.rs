@@ -953,7 +953,7 @@ async fn customize_seed(
     }
 
     let settings = CustomizeSettings {
-        samus_sprite: if ultra_low_qol && req.samus_sprite.0 == "samus" && req.vanilla_screw_attack_animation.0 {
+        samus_sprite: if ultra_low_qol && req.samus_sprite.0 == "samus_vanilla" && req.vanilla_screw_attack_animation.0 {
             None
         } else {
             Some(req.samus_sprite.0.clone())

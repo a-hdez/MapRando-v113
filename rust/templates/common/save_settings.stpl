@@ -32,6 +32,9 @@ function migrateValue(name, value) {
         },
         "music": {
             "vanilla": "area"
+        },
+        "samus_sprite": {
+            "samus": "samus_vanilla"
         }
     };
     if (migrationMapping[name] !== undefined) {
@@ -66,7 +69,7 @@ function loadForm(form) {
             if (element.type == "checkbox") {
                 element.checked = data[element.name];
             } else {
-                element.value = data[element.name];
+                element.value = migrateValue(element.name, data[element.name]);
             }
         }
     }
